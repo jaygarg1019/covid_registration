@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+
+.button2 {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 8px;
+  margin: 2px 1px;
+  cursor: pointer;
+  background-color: #4CAF50;
+}
+
+</style>
+</head>
+<body>
+<div class="topnav">
+  <a  href="./admin_nurse">Nurses</a>
+  <a href="./admin_vaccine">Vaccines</a>
+  <a class="active" href="./admin_patient">Patients</a>
+</div>
+
+{{!-- <button class="button">Edit Profile</button>
+<button class="button">Schedule Appointment</button>
+<button class="button">Cancel Appointment</button> --}}
+
+<h2>Patient Details</h2>
+<table>
+  <tr>
+      <th>Name</th>
+    <th>Email ID</th>
+    <th>Phone Number</th>
+    {{!-- <th>1st Appointment Date</th>
+    <th>2nd Appointment Date</th>
+    <th>Vaccine Name</th> --}}
+  </tr>
+  {{#each array_data as |item|}}
+  <tr>
+    <td>{{item.username}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.phone}}</td>
+  </tr>
+  {{/each}}  
+   
+</table>
+</body>
+</html>
